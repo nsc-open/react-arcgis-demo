@@ -1,5 +1,8 @@
 import dva from 'dva';
 import './index.css';
+import Loader from 'esri-module-loader'
+
+window.Loader = Loader
 
 // 1. Initialize
 const app = dva();
