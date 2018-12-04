@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Icon } from 'antd'
+import { Icon, Tooltip } from 'antd'
 import Draggable from 'react-draggable'
 import styles from './Toolbar.css'
 
@@ -33,7 +33,9 @@ class Toolbar extends Component {
                 className={activeToolKey === tool.key ? styles.activeTool : styles.tool}
                 onClick={() => this.clickHandler(tool.key)}
               >
-                <Icon type={tool.icon} />
+                <Tooltip title={tool.label}>
+                  <Icon type={tool.icon} />
+                </Tooltip>
               </div> 
           )}
         </div>
