@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'dva'
 import { Layout, Menu, Icon } from 'antd'
-import ArcMap from '@/components/ArcMap'
+import Map from '@/containers/Map'
 
 const { Header, Sider, Content } = Layout
 
@@ -49,7 +49,7 @@ class IndexPage extends Component {
             />
           </Header>
           <Content style={{ position: 'relative', margin: '24px 16px', padding: 0, background: '#fff', minHeight: 280 }}>
-            <ArcMap />
+            <Map />
           </Content>
         </Layout>
       </Layout>

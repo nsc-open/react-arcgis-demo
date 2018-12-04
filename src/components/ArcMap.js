@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import EsriLoaderReact from 'esri-loader-react'
+import Loader from 'esri-module-loader'
 import styles from './ArcMap.css'
 
+import SelectionManager from '@/lib/graphic/selection-manager'
+
+import { initAddGraphicsDemo } from '@/demos/add-graphics'
+
+
 class ArcMap extends Component {
+
 
   readyHandler = ({ loadedModules, containerNode }) => {
     const [ Map ] = loadedModules
@@ -11,6 +18,12 @@ class ArcMap extends Component {
       center: [-118, 34.5],
       zoom: 8,
       basemap: "topo"
+    })
+
+    map.on('load', () => {
+      initAddGraphicsDemo(map)
+
+      window.SM = new SelectionManager({ map })
     })
   }
 
