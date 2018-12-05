@@ -22,7 +22,10 @@ const tool = {
   settingPanelRender: (props) => {
     const { toolInstance, ...restProps } = props
     return <MyToolSettingsPanelForm toolInstance={toolInstance} />
-  }
+  },
+  onActivate () {},
+  onSettingsChange (settings) {},
+  onDeactivate () {}
 }
 
 class MyToolSettingsPanelForm extends Component {
